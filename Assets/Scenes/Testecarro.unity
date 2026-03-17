@@ -4507,7 +4507,7 @@ Transform:
   m_GameObject: {fileID: 3848666064782397371}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4528,7 +4528,7 @@ Rigidbody:
   serializedVersion: 5
   m_Mass: 1200
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_AngularDamping: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -4586,6 +4586,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarMotor
   motorForce: 1500
+  accelerationSpeed: 3
+  decelerationSpeed: 2
+  naturalDrag: 1
   wheelRL: {fileID: 3848872464023638583}
   wheelRR: {fileID: 3849130461713105729}
 --- !u!114 &3854769809673329172
