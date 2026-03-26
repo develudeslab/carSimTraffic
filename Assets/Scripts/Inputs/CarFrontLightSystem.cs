@@ -6,8 +6,8 @@ public class CarHeadLightSystem : MonoBehaviour
     
     public Light highBeam;
 
-    public float lowIntensity = 800f;
-    public float highIntensity = 1500f;
+    public float lowIntensity = 5f;
+    public float highIntensity = 15f;
     public float smoothSpeed = 10f;
 
     bool isLowOn = false;
