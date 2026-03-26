@@ -7,14 +7,15 @@ public class CarBrakeLight : MonoBehaviour
     public float maxIntensity = 3f;
     public float smoothSpeed = 10f;
 
-    bool isBraking;
+    private CarInputHandler _input;
+
+    private void Start() => _input = GetComponent<CarInputHandler>();
 
     void Update()
     {
-        isBraking = Input.GetKey(KeyCode.Space);
 
         // Suaviza a luz
-        float target = isBraking ? maxIntensity : 0f;
+        float target = _input.IsBraking ? maxIntensity : 0f;
         brakeLight.intensity = Mathf.Lerp(brakeLight.intensity, target, Time.deltaTime * smoothSpeed);
     }
 }

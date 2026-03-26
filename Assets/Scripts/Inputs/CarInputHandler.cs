@@ -20,7 +20,7 @@ public class CarInputHandler : MonoBehaviour
     private void OnEnable()
     {
         _inputActions.Driving.Enable();
-        
+
         // Inscrição nos eventos
         _inputActions.Driving.Move.performed += ctx => MoveInput = ctx.ReadValue<Vector2>();
         _inputActions.Driving.Move.canceled += ctx => MoveInput = Vector2.zero;
