@@ -234,6 +234,94 @@ public partial class @CarInputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""HeadLights"",
+            ""id"": ""58c07ffb-4676-43c2-a258-1ed9f3142210"",
+            ""actions"": [
+                {
+                    ""name"": ""LowBeams"",
+                    ""type"": ""Button"",
+                    ""id"": ""9d32c1a7-7752-4922-b54a-19ee9132d193"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""HighBeams"",
+                    ""type"": ""Button"",
+                    ""id"": ""b6acbdf8-d909-4c62-a6fd-cc9aaf93014f"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RighSignal"",
+                    ""type"": ""Button"",
+                    ""id"": ""af8bcb28-b4ca-4041-8d52-b3cc35f35151"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LeftSignal"",
+                    ""type"": ""Button"",
+                    ""id"": ""82c2abee-bbb9-4c07-ba21-79044d7b1078"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""bc1e6450-b4e7-4bb1-87de-87bf6c84a198"",
+                    ""path"": ""<Keyboard>/g"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HighBeams"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""45d8c7dc-4ebf-409a-b26f-be5ae5cd6f9b"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LowBeams"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a18e0e2e-fa73-4794-b74e-087868f58fe5"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RighSignal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cd51a3a5-e017-459d-acc1-45d6358e86e6"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeftSignal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -242,11 +330,18 @@ public partial class @CarInputActions: IInputActionCollection2, IDisposable
         m_Driving = asset.FindActionMap("Driving", throwIfNotFound: true);
         m_Driving_Move = m_Driving.FindAction("Move", throwIfNotFound: true);
         m_Driving_Brake = m_Driving.FindAction("Brake", throwIfNotFound: true);
+        // HeadLights
+        m_HeadLights = asset.FindActionMap("HeadLights", throwIfNotFound: true);
+        m_HeadLights_LowBeams = m_HeadLights.FindAction("LowBeams", throwIfNotFound: true);
+        m_HeadLights_HighBeams = m_HeadLights.FindAction("HighBeams", throwIfNotFound: true);
+        m_HeadLights_RighSignal = m_HeadLights.FindAction("RighSignal", throwIfNotFound: true);
+        m_HeadLights_LeftSignal = m_HeadLights.FindAction("LeftSignal", throwIfNotFound: true);
     }
 
     ~@CarInputActions()
     {
         UnityEngine.Debug.Assert(!m_Driving.enabled, "This will cause a leak and performance issues, CarInputActions.Driving.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_HeadLights.enabled, "This will cause a leak and performance issues, CarInputActions.HeadLights.Disable() has not been called.");
     }
 
     /// <summary>
@@ -425,6 +520,135 @@ public partial class @CarInputActions: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="DrivingActions" /> instance referencing this action map.
     /// </summary>
     public DrivingActions @Driving => new DrivingActions(this);
+
+    // HeadLights
+    private readonly InputActionMap m_HeadLights;
+    private List<IHeadLightsActions> m_HeadLightsActionsCallbackInterfaces = new List<IHeadLightsActions>();
+    private readonly InputAction m_HeadLights_LowBeams;
+    private readonly InputAction m_HeadLights_HighBeams;
+    private readonly InputAction m_HeadLights_RighSignal;
+    private readonly InputAction m_HeadLights_LeftSignal;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "HeadLights".
+    /// </summary>
+    public struct HeadLightsActions
+    {
+        private @CarInputActions m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public HeadLightsActions(@CarInputActions wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "HeadLights/LowBeams".
+        /// </summary>
+        public InputAction @LowBeams => m_Wrapper.m_HeadLights_LowBeams;
+        /// <summary>
+        /// Provides access to the underlying input action "HeadLights/HighBeams".
+        /// </summary>
+        public InputAction @HighBeams => m_Wrapper.m_HeadLights_HighBeams;
+        /// <summary>
+        /// Provides access to the underlying input action "HeadLights/RighSignal".
+        /// </summary>
+        public InputAction @RighSignal => m_Wrapper.m_HeadLights_RighSignal;
+        /// <summary>
+        /// Provides access to the underlying input action "HeadLights/LeftSignal".
+        /// </summary>
+        public InputAction @LeftSignal => m_Wrapper.m_HeadLights_LeftSignal;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_HeadLights; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="HeadLightsActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(HeadLightsActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="HeadLightsActions" />
+        public void AddCallbacks(IHeadLightsActions instance)
+        {
+            if (instance == null || m_Wrapper.m_HeadLightsActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_HeadLightsActionsCallbackInterfaces.Add(instance);
+            @LowBeams.started += instance.OnLowBeams;
+            @LowBeams.performed += instance.OnLowBeams;
+            @LowBeams.canceled += instance.OnLowBeams;
+            @HighBeams.started += instance.OnHighBeams;
+            @HighBeams.performed += instance.OnHighBeams;
+            @HighBeams.canceled += instance.OnHighBeams;
+            @RighSignal.started += instance.OnRighSignal;
+            @RighSignal.performed += instance.OnRighSignal;
+            @RighSignal.canceled += instance.OnRighSignal;
+            @LeftSignal.started += instance.OnLeftSignal;
+            @LeftSignal.performed += instance.OnLeftSignal;
+            @LeftSignal.canceled += instance.OnLeftSignal;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="HeadLightsActions" />
+        private void UnregisterCallbacks(IHeadLightsActions instance)
+        {
+            @LowBeams.started -= instance.OnLowBeams;
+            @LowBeams.performed -= instance.OnLowBeams;
+            @LowBeams.canceled -= instance.OnLowBeams;
+            @HighBeams.started -= instance.OnHighBeams;
+            @HighBeams.performed -= instance.OnHighBeams;
+            @HighBeams.canceled -= instance.OnHighBeams;
+            @RighSignal.started -= instance.OnRighSignal;
+            @RighSignal.performed -= instance.OnRighSignal;
+            @RighSignal.canceled -= instance.OnRighSignal;
+            @LeftSignal.started -= instance.OnLeftSignal;
+            @LeftSignal.performed -= instance.OnLeftSignal;
+            @LeftSignal.canceled -= instance.OnLeftSignal;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="HeadLightsActions.UnregisterCallbacks(IHeadLightsActions)" />.
+        /// </summary>
+        /// <seealso cref="HeadLightsActions.UnregisterCallbacks(IHeadLightsActions)" />
+        public void RemoveCallbacks(IHeadLightsActions instance)
+        {
+            if (m_Wrapper.m_HeadLightsActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="HeadLightsActions.AddCallbacks(IHeadLightsActions)" />
+        /// <seealso cref="HeadLightsActions.RemoveCallbacks(IHeadLightsActions)" />
+        /// <seealso cref="HeadLightsActions.UnregisterCallbacks(IHeadLightsActions)" />
+        public void SetCallbacks(IHeadLightsActions instance)
+        {
+            foreach (var item in m_Wrapper.m_HeadLightsActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_HeadLightsActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="HeadLightsActions" /> instance referencing this action map.
+    /// </summary>
+    public HeadLightsActions @HeadLights => new HeadLightsActions(this);
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Driving" which allows adding and removing callbacks.
     /// </summary>
@@ -446,5 +670,41 @@ public partial class @CarInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnBrake(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "HeadLights" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="HeadLightsActions.AddCallbacks(IHeadLightsActions)" />
+    /// <seealso cref="HeadLightsActions.RemoveCallbacks(IHeadLightsActions)" />
+    public interface IHeadLightsActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "LowBeams" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnLowBeams(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "HighBeams" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnHighBeams(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "RighSignal" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnRighSignal(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "LeftSignal" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnLeftSignal(InputAction.CallbackContext context);
     }
 }

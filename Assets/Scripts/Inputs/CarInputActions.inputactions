@@ -148,6 +148,94 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "HeadLights",
+            "id": "58c07ffb-4676-43c2-a258-1ed9f3142210",
+            "actions": [
+                {
+                    "name": "LowBeams",
+                    "type": "Button",
+                    "id": "9d32c1a7-7752-4922-b54a-19ee9132d193",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "HighBeams",
+                    "type": "Button",
+                    "id": "b6acbdf8-d909-4c62-a6fd-cc9aaf93014f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RighSignal",
+                    "type": "Button",
+                    "id": "af8bcb28-b4ca-4041-8d52-b3cc35f35151",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LeftSignal",
+                    "type": "Button",
+                    "id": "82c2abee-bbb9-4c07-ba21-79044d7b1078",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "bc1e6450-b4e7-4bb1-87de-87bf6c84a198",
+                    "path": "<Keyboard>/g",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HighBeams",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "45d8c7dc-4ebf-409a-b26f-be5ae5cd6f9b",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LowBeams",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a18e0e2e-fa73-4794-b74e-087868f58fe5",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RighSignal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cd51a3a5-e017-459d-acc1-45d6358e86e6",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftSignal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
