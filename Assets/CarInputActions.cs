@@ -102,9 +102,72 @@ public partial class @CarInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
+                    ""name"": ""Hazard"",
+                    ""type"": ""Button"",
+                    ""id"": ""8c7f182f-5e53-417a-a347-5ca12bbae525"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LeftSignal"",
+                    ""type"": ""Button"",
+                    ""id"": ""01e46dba-9440-43e5-8d25-18d1f6c6a3a5"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RightSignal"",
+                    ""type"": ""Button"",
+                    ""id"": ""449a76d5-67d4-4bb0-bbe0-817ac6cd39d4"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""HighBeams"",
+                    ""type"": ""Button"",
+                    ""id"": ""5432f84e-be95-4ae8-960d-15678bdf929e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LowBeams"",
+                    ""type"": ""Button"",
+                    ""id"": ""6bf546c6-c0d6-49d1-9027-e778b0737f82"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Brake"",
                     ""type"": ""Button"",
                     ""id"": ""2af7bc08-6b28-4fb3-afd6-9d0a1b7c430c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ShiftUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""44e1ea14-3897-4ebd-b911-2446439c2d05"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ShiftDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""2bed4614-0646-4407-b1d2-4cedbefe5f1e"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -224,104 +287,18 @@ public partial class @CarInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""63a41377-7ce4-43a3-be46-4e02c9ff8900"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""id"": ""5a42c911-3396-4335-b358-f59445fde946"",
+                    ""path"": ""<Keyboard>/enter"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Brake"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""HeadLights"",
-            ""id"": ""58c07ffb-4676-43c2-a258-1ed9f3142210"",
-            ""actions"": [
-                {
-                    ""name"": ""LowBeams"",
-                    ""type"": ""Button"",
-                    ""id"": ""9d32c1a7-7752-4922-b54a-19ee9132d193"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""HighBeams"",
-                    ""type"": ""Button"",
-                    ""id"": ""b6acbdf8-d909-4c62-a6fd-cc9aaf93014f"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""RightSignal"",
-                    ""type"": ""Button"",
-                    ""id"": ""af8bcb28-b4ca-4041-8d52-b3cc35f35151"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""LeftSignal"",
-                    ""type"": ""Button"",
-                    ""id"": ""82c2abee-bbb9-4c07-ba21-79044d7b1078"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Hazard"",
-                    ""type"": ""Button"",
-                    ""id"": ""c135569b-9cd8-4f08-a12f-f75c11debb4b"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""bc1e6450-b4e7-4bb1-87de-87bf6c84a198"",
-                    ""path"": ""<Keyboard>/g"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""HighBeams"",
+                    ""action"": ""Hazard"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""45d8c7dc-4ebf-409a-b26f-be5ae5cd6f9b"",
-                    ""path"": ""<Keyboard>/f"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""LowBeams"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""a18e0e2e-fa73-4794-b74e-087868f58fe5"",
-                    ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RightSignal"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""cd51a3a5-e017-459d-acc1-45d6358e86e6"",
+                    ""id"": ""9c5ffe77-b5f4-4e11-b759-ecb6b316a9f3"",
                     ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -332,12 +309,67 @@ public partial class @CarInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""66273aed-0990-42ee-9023-e9dccc8f4c8e"",
-                    ""path"": ""<Keyboard>/enter"",
+                    ""id"": ""93ce3b00-638a-4ffb-a24b-233de81bd272"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Hazard"",
+                    ""action"": ""RightSignal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2a457938-7441-4c2e-b478-702038d400b3"",
+                    ""path"": ""<Keyboard>/g"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HighBeams"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4b2557f7-de48-44d2-a4d3-05bae90097bb"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LowBeams"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""63a41377-7ce4-43a3-be46-4e02c9ff8900"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Brake"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""31c0c062-a15d-4959-88ff-97eda84f0e8e"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ShiftUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""804110c9-cb25-4bcc-9c51-b396564df947"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ShiftDown"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -349,20 +381,19 @@ public partial class @CarInputActions: IInputActionCollection2, IDisposable
         // Driving
         m_Driving = asset.FindActionMap("Driving", throwIfNotFound: true);
         m_Driving_Move = m_Driving.FindAction("Move", throwIfNotFound: true);
+        m_Driving_Hazard = m_Driving.FindAction("Hazard", throwIfNotFound: true);
+        m_Driving_LeftSignal = m_Driving.FindAction("LeftSignal", throwIfNotFound: true);
+        m_Driving_RightSignal = m_Driving.FindAction("RightSignal", throwIfNotFound: true);
+        m_Driving_HighBeams = m_Driving.FindAction("HighBeams", throwIfNotFound: true);
+        m_Driving_LowBeams = m_Driving.FindAction("LowBeams", throwIfNotFound: true);
         m_Driving_Brake = m_Driving.FindAction("Brake", throwIfNotFound: true);
-        // HeadLights
-        m_HeadLights = asset.FindActionMap("HeadLights", throwIfNotFound: true);
-        m_HeadLights_LowBeams = m_HeadLights.FindAction("LowBeams", throwIfNotFound: true);
-        m_HeadLights_HighBeams = m_HeadLights.FindAction("HighBeams", throwIfNotFound: true);
-        m_HeadLights_RightSignal = m_HeadLights.FindAction("RightSignal", throwIfNotFound: true);
-        m_HeadLights_LeftSignal = m_HeadLights.FindAction("LeftSignal", throwIfNotFound: true);
-        m_HeadLights_Hazard = m_HeadLights.FindAction("Hazard", throwIfNotFound: true);
+        m_Driving_ShiftUp = m_Driving.FindAction("ShiftUp", throwIfNotFound: true);
+        m_Driving_ShiftDown = m_Driving.FindAction("ShiftDown", throwIfNotFound: true);
     }
 
     ~@CarInputActions()
     {
         UnityEngine.Debug.Assert(!m_Driving.enabled, "This will cause a leak and performance issues, CarInputActions.Driving.Disable() has not been called.");
-        UnityEngine.Debug.Assert(!m_HeadLights.enabled, "This will cause a leak and performance issues, CarInputActions.HeadLights.Disable() has not been called.");
     }
 
     /// <summary>
@@ -439,7 +470,14 @@ public partial class @CarInputActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Driving;
     private List<IDrivingActions> m_DrivingActionsCallbackInterfaces = new List<IDrivingActions>();
     private readonly InputAction m_Driving_Move;
+    private readonly InputAction m_Driving_Hazard;
+    private readonly InputAction m_Driving_LeftSignal;
+    private readonly InputAction m_Driving_RightSignal;
+    private readonly InputAction m_Driving_HighBeams;
+    private readonly InputAction m_Driving_LowBeams;
     private readonly InputAction m_Driving_Brake;
+    private readonly InputAction m_Driving_ShiftUp;
+    private readonly InputAction m_Driving_ShiftDown;
     /// <summary>
     /// Provides access to input actions defined in input action map "Driving".
     /// </summary>
@@ -456,9 +494,37 @@ public partial class @CarInputActions: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @Move => m_Wrapper.m_Driving_Move;
         /// <summary>
+        /// Provides access to the underlying input action "Driving/Hazard".
+        /// </summary>
+        public InputAction @Hazard => m_Wrapper.m_Driving_Hazard;
+        /// <summary>
+        /// Provides access to the underlying input action "Driving/LeftSignal".
+        /// </summary>
+        public InputAction @LeftSignal => m_Wrapper.m_Driving_LeftSignal;
+        /// <summary>
+        /// Provides access to the underlying input action "Driving/RightSignal".
+        /// </summary>
+        public InputAction @RightSignal => m_Wrapper.m_Driving_RightSignal;
+        /// <summary>
+        /// Provides access to the underlying input action "Driving/HighBeams".
+        /// </summary>
+        public InputAction @HighBeams => m_Wrapper.m_Driving_HighBeams;
+        /// <summary>
+        /// Provides access to the underlying input action "Driving/LowBeams".
+        /// </summary>
+        public InputAction @LowBeams => m_Wrapper.m_Driving_LowBeams;
+        /// <summary>
         /// Provides access to the underlying input action "Driving/Brake".
         /// </summary>
         public InputAction @Brake => m_Wrapper.m_Driving_Brake;
+        /// <summary>
+        /// Provides access to the underlying input action "Driving/ShiftUp".
+        /// </summary>
+        public InputAction @ShiftUp => m_Wrapper.m_Driving_ShiftUp;
+        /// <summary>
+        /// Provides access to the underlying input action "Driving/ShiftDown".
+        /// </summary>
+        public InputAction @ShiftDown => m_Wrapper.m_Driving_ShiftDown;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -488,9 +554,30 @@ public partial class @CarInputActions: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
+            @Hazard.started += instance.OnHazard;
+            @Hazard.performed += instance.OnHazard;
+            @Hazard.canceled += instance.OnHazard;
+            @LeftSignal.started += instance.OnLeftSignal;
+            @LeftSignal.performed += instance.OnLeftSignal;
+            @LeftSignal.canceled += instance.OnLeftSignal;
+            @RightSignal.started += instance.OnRightSignal;
+            @RightSignal.performed += instance.OnRightSignal;
+            @RightSignal.canceled += instance.OnRightSignal;
+            @HighBeams.started += instance.OnHighBeams;
+            @HighBeams.performed += instance.OnHighBeams;
+            @HighBeams.canceled += instance.OnHighBeams;
+            @LowBeams.started += instance.OnLowBeams;
+            @LowBeams.performed += instance.OnLowBeams;
+            @LowBeams.canceled += instance.OnLowBeams;
             @Brake.started += instance.OnBrake;
             @Brake.performed += instance.OnBrake;
             @Brake.canceled += instance.OnBrake;
+            @ShiftUp.started += instance.OnShiftUp;
+            @ShiftUp.performed += instance.OnShiftUp;
+            @ShiftUp.canceled += instance.OnShiftUp;
+            @ShiftDown.started += instance.OnShiftDown;
+            @ShiftDown.performed += instance.OnShiftDown;
+            @ShiftDown.canceled += instance.OnShiftDown;
         }
 
         /// <summary>
@@ -505,9 +592,30 @@ public partial class @CarInputActions: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
+            @Hazard.started -= instance.OnHazard;
+            @Hazard.performed -= instance.OnHazard;
+            @Hazard.canceled -= instance.OnHazard;
+            @LeftSignal.started -= instance.OnLeftSignal;
+            @LeftSignal.performed -= instance.OnLeftSignal;
+            @LeftSignal.canceled -= instance.OnLeftSignal;
+            @RightSignal.started -= instance.OnRightSignal;
+            @RightSignal.performed -= instance.OnRightSignal;
+            @RightSignal.canceled -= instance.OnRightSignal;
+            @HighBeams.started -= instance.OnHighBeams;
+            @HighBeams.performed -= instance.OnHighBeams;
+            @HighBeams.canceled -= instance.OnHighBeams;
+            @LowBeams.started -= instance.OnLowBeams;
+            @LowBeams.performed -= instance.OnLowBeams;
+            @LowBeams.canceled -= instance.OnLowBeams;
             @Brake.started -= instance.OnBrake;
             @Brake.performed -= instance.OnBrake;
             @Brake.canceled -= instance.OnBrake;
+            @ShiftUp.started -= instance.OnShiftUp;
+            @ShiftUp.performed -= instance.OnShiftUp;
+            @ShiftUp.canceled -= instance.OnShiftUp;
+            @ShiftDown.started -= instance.OnShiftDown;
+            @ShiftDown.performed -= instance.OnShiftDown;
+            @ShiftDown.canceled -= instance.OnShiftDown;
         }
 
         /// <summary>
@@ -541,146 +649,6 @@ public partial class @CarInputActions: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="DrivingActions" /> instance referencing this action map.
     /// </summary>
     public DrivingActions @Driving => new DrivingActions(this);
-
-    // HeadLights
-    private readonly InputActionMap m_HeadLights;
-    private List<IHeadLightsActions> m_HeadLightsActionsCallbackInterfaces = new List<IHeadLightsActions>();
-    private readonly InputAction m_HeadLights_LowBeams;
-    private readonly InputAction m_HeadLights_HighBeams;
-    private readonly InputAction m_HeadLights_RightSignal;
-    private readonly InputAction m_HeadLights_LeftSignal;
-    private readonly InputAction m_HeadLights_Hazard;
-    /// <summary>
-    /// Provides access to input actions defined in input action map "HeadLights".
-    /// </summary>
-    public struct HeadLightsActions
-    {
-        private @CarInputActions m_Wrapper;
-
-        /// <summary>
-        /// Construct a new instance of the input action map wrapper class.
-        /// </summary>
-        public HeadLightsActions(@CarInputActions wrapper) { m_Wrapper = wrapper; }
-        /// <summary>
-        /// Provides access to the underlying input action "HeadLights/LowBeams".
-        /// </summary>
-        public InputAction @LowBeams => m_Wrapper.m_HeadLights_LowBeams;
-        /// <summary>
-        /// Provides access to the underlying input action "HeadLights/HighBeams".
-        /// </summary>
-        public InputAction @HighBeams => m_Wrapper.m_HeadLights_HighBeams;
-        /// <summary>
-        /// Provides access to the underlying input action "HeadLights/RightSignal".
-        /// </summary>
-        public InputAction @RightSignal => m_Wrapper.m_HeadLights_RightSignal;
-        /// <summary>
-        /// Provides access to the underlying input action "HeadLights/LeftSignal".
-        /// </summary>
-        public InputAction @LeftSignal => m_Wrapper.m_HeadLights_LeftSignal;
-        /// <summary>
-        /// Provides access to the underlying input action "HeadLights/Hazard".
-        /// </summary>
-        public InputAction @Hazard => m_Wrapper.m_HeadLights_Hazard;
-        /// <summary>
-        /// Provides access to the underlying input action map instance.
-        /// </summary>
-        public InputActionMap Get() { return m_Wrapper.m_HeadLights; }
-        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
-        public void Enable() { Get().Enable(); }
-        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
-        public void Disable() { Get().Disable(); }
-        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
-        public bool enabled => Get().enabled;
-        /// <summary>
-        /// Implicitly converts an <see ref="HeadLightsActions" /> to an <see ref="InputActionMap" /> instance.
-        /// </summary>
-        public static implicit operator InputActionMap(HeadLightsActions set) { return set.Get(); }
-        /// <summary>
-        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
-        /// </summary>
-        /// <param name="instance">Callback instance.</param>
-        /// <remarks>
-        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
-        /// </remarks>
-        /// <seealso cref="HeadLightsActions" />
-        public void AddCallbacks(IHeadLightsActions instance)
-        {
-            if (instance == null || m_Wrapper.m_HeadLightsActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_HeadLightsActionsCallbackInterfaces.Add(instance);
-            @LowBeams.started += instance.OnLowBeams;
-            @LowBeams.performed += instance.OnLowBeams;
-            @LowBeams.canceled += instance.OnLowBeams;
-            @HighBeams.started += instance.OnHighBeams;
-            @HighBeams.performed += instance.OnHighBeams;
-            @HighBeams.canceled += instance.OnHighBeams;
-            @RightSignal.started += instance.OnRightSignal;
-            @RightSignal.performed += instance.OnRightSignal;
-            @RightSignal.canceled += instance.OnRightSignal;
-            @LeftSignal.started += instance.OnLeftSignal;
-            @LeftSignal.performed += instance.OnLeftSignal;
-            @LeftSignal.canceled += instance.OnLeftSignal;
-            @Hazard.started += instance.OnHazard;
-            @Hazard.performed += instance.OnHazard;
-            @Hazard.canceled += instance.OnHazard;
-        }
-
-        /// <summary>
-        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
-        /// </summary>
-        /// <remarks>
-        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
-        /// </remarks>
-        /// <seealso cref="HeadLightsActions" />
-        private void UnregisterCallbacks(IHeadLightsActions instance)
-        {
-            @LowBeams.started -= instance.OnLowBeams;
-            @LowBeams.performed -= instance.OnLowBeams;
-            @LowBeams.canceled -= instance.OnLowBeams;
-            @HighBeams.started -= instance.OnHighBeams;
-            @HighBeams.performed -= instance.OnHighBeams;
-            @HighBeams.canceled -= instance.OnHighBeams;
-            @RightSignal.started -= instance.OnRightSignal;
-            @RightSignal.performed -= instance.OnRightSignal;
-            @RightSignal.canceled -= instance.OnRightSignal;
-            @LeftSignal.started -= instance.OnLeftSignal;
-            @LeftSignal.performed -= instance.OnLeftSignal;
-            @LeftSignal.canceled -= instance.OnLeftSignal;
-            @Hazard.started -= instance.OnHazard;
-            @Hazard.performed -= instance.OnHazard;
-            @Hazard.canceled -= instance.OnHazard;
-        }
-
-        /// <summary>
-        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="HeadLightsActions.UnregisterCallbacks(IHeadLightsActions)" />.
-        /// </summary>
-        /// <seealso cref="HeadLightsActions.UnregisterCallbacks(IHeadLightsActions)" />
-        public void RemoveCallbacks(IHeadLightsActions instance)
-        {
-            if (m_Wrapper.m_HeadLightsActionsCallbackInterfaces.Remove(instance))
-                UnregisterCallbacks(instance);
-        }
-
-        /// <summary>
-        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
-        /// </summary>
-        /// <remarks>
-        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
-        /// </remarks>
-        /// <seealso cref="HeadLightsActions.AddCallbacks(IHeadLightsActions)" />
-        /// <seealso cref="HeadLightsActions.RemoveCallbacks(IHeadLightsActions)" />
-        /// <seealso cref="HeadLightsActions.UnregisterCallbacks(IHeadLightsActions)" />
-        public void SetCallbacks(IHeadLightsActions instance)
-        {
-            foreach (var item in m_Wrapper.m_HeadLightsActionsCallbackInterfaces)
-                UnregisterCallbacks(item);
-            m_Wrapper.m_HeadLightsActionsCallbackInterfaces.Clear();
-            AddCallbacks(instance);
-        }
-    }
-    /// <summary>
-    /// Provides a new <see cref="HeadLightsActions" /> instance referencing this action map.
-    /// </summary>
-    public HeadLightsActions @HeadLights => new HeadLightsActions(this);
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Driving" which allows adding and removing callbacks.
     /// </summary>
@@ -696,41 +664,12 @@ public partial class @CarInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMove(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Brake" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Hazard" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnBrake(InputAction.CallbackContext context);
-    }
-    /// <summary>
-    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "HeadLights" which allows adding and removing callbacks.
-    /// </summary>
-    /// <seealso cref="HeadLightsActions.AddCallbacks(IHeadLightsActions)" />
-    /// <seealso cref="HeadLightsActions.RemoveCallbacks(IHeadLightsActions)" />
-    public interface IHeadLightsActions
-    {
-        /// <summary>
-        /// Method invoked when associated input action "LowBeams" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnLowBeams(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "HighBeams" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnHighBeams(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "RightSignal" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnRightSignal(InputAction.CallbackContext context);
+        void OnHazard(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "LeftSignal" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
@@ -739,11 +678,46 @@ public partial class @CarInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnLeftSignal(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Hazard" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "RightSignal" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnHazard(InputAction.CallbackContext context);
+        void OnRightSignal(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "HighBeams" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnHighBeams(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "LowBeams" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnLowBeams(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Brake" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnBrake(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ShiftUp" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnShiftUp(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ShiftDown" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnShiftDown(InputAction.CallbackContext context);
     }
 }

@@ -861,13 +861,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1283475028}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -2.3283064e-10, w: 1}
-  m_LocalPosition: {x: 0.928, y: 1.06, z: 0.273}
+  m_LocalRotation: {x: -0.10355234, y: -0.05799778, z: -0.0060486477, w: 0.9929132}
+  m_LocalPosition: {x: 0.92800957, y: 1.0600007, z: 0.27297315}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4070800402331862160}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -11.908, y: -6.686, z: 0}
 --- !u!1 &1459667636
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,13 +1121,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1667471828}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -2.3283064e-10, w: 1}
-  m_LocalPosition: {x: -0.951, y: 1.06, z: 0.273}
+  m_LocalRotation: {x: -2.3283062e-10, y: 0.009325007, z: 6.4937916e-10, w: 0.99995655}
+  m_LocalPosition: {x: -0.9509888, y: 1.06, z: 0.27302304}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4070800402331862160}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 1.069, z: 0}
 --- !u!114 &1667471830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5903,6 +5903,18 @@ MonoBehaviour:
   accelerationSpeed: 3
   decelerationSpeed: 2
   naturalDrag: 1
+  gears:
+  - -3
+  - 0
+  - 3.2
+  - 2.1
+  - 1.5
+  - 1
+  - 0.8
+  currentGear: 2
+  minRPM: 800
+  maxRPM: 7000
+  rpmMultiplier: 50
   wheelRL: {fileID: 6481849998036036588}
   wheelRR: {fileID: 4840755664241546147}
 --- !u!23 &772473944500943047
@@ -7238,14 +7250,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &963282738216432371
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7779694844823584401}
-  m_Enabled: 0
 --- !u!33 &963593371480867722
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12074,50 +12078,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1786658948176791099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7779694844823584401}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_AllowHDROutput: 1
-  m_UseScreenCoordOverride: 0
-  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
-  m_Version: 2
 --- !u!23 &1789321837812551546
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24438,7 +24398,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6618875059389674347}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!1 &3692660237015590645
 GameObject:
   m_ObjectHideFlags: 0
@@ -26902,7 +26862,6 @@ Transform:
   m_Children:
   - {fileID: 1283475031}
   - {fileID: 1667471829}
-  - {fileID: 9101510842143566998}
   m_Father: {fileID: 21424320124862743}
   m_LocalEulerAnglesHint: {x: 0.255, y: -0.149, z: -0.121}
 --- !u!33 &4077568461072773751
@@ -38649,57 +38608,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!20 &5842569780408929630
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7779694844823584401}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 4
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_Iso: 200
-  m_ShutterSpeed: 0.005
-  m_Aperture: 16
-  m_FocusDistance: 10
-  m_FocalLength: 137509870
-  m_BladeCount: 5
-  m_Curvature: {x: 2, y: 11}
-  m_BarrelClipping: 0.25
-  m_Anamorphism: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 24.9
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: 1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: d935143d99ef7714baf3e0f5ec17c5f6, type: 2}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
 --- !u!33 &5844548168765832819
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -51299,25 +51207,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1698168138174034166}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7779694844823584401
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9101510842143566998}
-  - component: {fileID: 5842569780408929630}
-  - component: {fileID: 963282738216432371}
-  - component: {fileID: 1786658948176791099}
-  m_Layer: 0
-  m_Name: cameraRetrovisor
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!23 &7781162815286225038
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -57320,23 +57209,27 @@ MonoBehaviour:
     m_ActionId: cc8db0e2-df46-4118-8827-56b3497b6bf6
     m_ActionName: 'Driving/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 2af7bc08-6b28-4fb3-afd6-9d0a1b7c430c
     m_ActionName: 'Driving/Brake[/Keyboard/space]'
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 9d32c1a7-7752-4922-b54a-19ee9132d193
-    m_ActionName: 'HeadLights/LowBeams[/Keyboard/f]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: b6acbdf8-d909-4c62-a6fd-cc9aaf93014f
-    m_ActionName: 'HeadLights/HighBeams[/Keyboard/g]'
-  - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8645303987851149628}
-        m_TargetAssemblyTypeName: CarTurnSignalSystem, Assembly-CSharp
-        m_MethodName: OnRightSignal
-        m_Mode: 0
+      - m_Target: {fileID: 766811152816552769}
+        m_TargetAssemblyTypeName: CarMotor, Assembly-CSharp
+        m_MethodName: OnShiftUp
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -57345,14 +57238,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: af8bcb28-b4ca-4041-8d52-b3cc35f35151
-    m_ActionName: 'HeadLights/RighSignal[/Keyboard/e]'
+    m_ActionId: 44e1ea14-3897-4ebd-b911-2446439c2d05
+    m_ActionName: 'Driving/ShiftUp[/Keyboard/shift]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8645303987851149628}
-        m_TargetAssemblyTypeName: CarTurnSignalSystem, Assembly-CSharp
-        m_MethodName: OnLeftSignal
-        m_Mode: 0
+      - m_Target: {fileID: 766811152816552769}
+        m_TargetAssemblyTypeName: CarMotor, Assembly-CSharp
+        m_MethodName: OnShiftDown
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -57361,8 +57254,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 82c2abee-bbb9-4c07-ba21-79044d7b1078
-    m_ActionName: 'HeadLights/LeftSignal[/Keyboard/q]'
+    m_ActionId: 2bed4614-0646-4407-b1d2-4cedbefe5f1e
+    m_ActionName: 'Driving/ShiftDown[/Keyboard/ctrl]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8645303987851149628}
@@ -57377,11 +57270,63 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: c135569b-9cd8-4f08-a12f-f75c11debb4b
-    m_ActionName: 'HeadLights/Hazard[/Keyboard/enter]'
+    m_ActionId: 8c7f182f-5e53-417a-a347-5ca12bbae525
+    m_ActionName: 'Driving/Hazard[/Keyboard/enter]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8645303987851149628}
+        m_TargetAssemblyTypeName: CarTurnSignalSystem, Assembly-CSharp
+        m_MethodName: OnLeftSignal
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 01e46dba-9440-43e5-8d25-18d1f6c6a3a5
+    m_ActionName: 'Driving/LeftSignal[/Keyboard/q]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8645303987851149628}
+        m_TargetAssemblyTypeName: CarTurnSignalSystem, Assembly-CSharp
+        m_MethodName: OnRightSignal
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 449a76d5-67d4-4bb0-bbe0-817ac6cd39d4
+    m_ActionName: 'Driving/RightSignal[/Keyboard/e]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5432f84e-be95-4ae8-960d-15678bdf929e
+    m_ActionName: 'Driving/HighBeams[/Keyboard/g]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6bf546c6-c0d6-49d1-9027-e778b0737f82
+    m_ActionName: 'Driving/LowBeams[/Keyboard/f]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: HeadLights
+  m_DefaultActionMap: Driving
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!4 &8646231320315143735
@@ -60940,21 +60885,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3737421156171242746}
   m_Mesh: {fileID: -7206218185515825119, guid: 0adf5001e66a0234d9bf98e5920d6d92, type: 3}
---- !u!4 &9101510842143566998
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7779694844823584401}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.002545917, y: 0.9937888, z: 0.1112537, w: 0.0002372683}
-  m_LocalPosition: {x: -0.9680042, y: 1.0550003, z: 0.26700562}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4070800402331862160}
-  m_LocalEulerAnglesHint: {x: -12.775, y: 179.939, z: 0.3}
 --- !u!4 &9104205157085520496
 Transform:
   m_ObjectHideFlags: 0

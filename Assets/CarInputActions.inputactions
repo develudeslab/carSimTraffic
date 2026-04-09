@@ -16,9 +16,72 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Hazard",
+                    "type": "Button",
+                    "id": "8c7f182f-5e53-417a-a347-5ca12bbae525",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LeftSignal",
+                    "type": "Button",
+                    "id": "01e46dba-9440-43e5-8d25-18d1f6c6a3a5",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RightSignal",
+                    "type": "Button",
+                    "id": "449a76d5-67d4-4bb0-bbe0-817ac6cd39d4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "HighBeams",
+                    "type": "Button",
+                    "id": "5432f84e-be95-4ae8-960d-15678bdf929e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LowBeams",
+                    "type": "Button",
+                    "id": "6bf546c6-c0d6-49d1-9027-e778b0737f82",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Brake",
                     "type": "Button",
                     "id": "2af7bc08-6b28-4fb3-afd6-9d0a1b7c430c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ShiftUp",
+                    "type": "Button",
+                    "id": "44e1ea14-3897-4ebd-b911-2446439c2d05",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ShiftDown",
+                    "type": "Button",
+                    "id": "2bed4614-0646-4407-b1d2-4cedbefe5f1e",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -138,104 +201,18 @@
                 },
                 {
                     "name": "",
-                    "id": "63a41377-7ce4-43a3-be46-4e02c9ff8900",
-                    "path": "<Keyboard>/space",
+                    "id": "5a42c911-3396-4335-b358-f59445fde946",
+                    "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Brake",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "HeadLights",
-            "id": "58c07ffb-4676-43c2-a258-1ed9f3142210",
-            "actions": [
-                {
-                    "name": "LowBeams",
-                    "type": "Button",
-                    "id": "9d32c1a7-7752-4922-b54a-19ee9132d193",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "HighBeams",
-                    "type": "Button",
-                    "id": "b6acbdf8-d909-4c62-a6fd-cc9aaf93014f",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "RightSignal",
-                    "type": "Button",
-                    "id": "af8bcb28-b4ca-4041-8d52-b3cc35f35151",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "LeftSignal",
-                    "type": "Button",
-                    "id": "82c2abee-bbb9-4c07-ba21-79044d7b1078",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Hazard",
-                    "type": "Button",
-                    "id": "c135569b-9cd8-4f08-a12f-f75c11debb4b",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "bc1e6450-b4e7-4bb1-87de-87bf6c84a198",
-                    "path": "<Keyboard>/g",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "HighBeams",
+                    "action": "Hazard",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "45d8c7dc-4ebf-409a-b26f-be5ae5cd6f9b",
-                    "path": "<Keyboard>/f",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "LowBeams",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a18e0e2e-fa73-4794-b74e-087868f58fe5",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RightSignal",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "cd51a3a5-e017-459d-acc1-45d6358e86e6",
+                    "id": "9c5ffe77-b5f4-4e11-b759-ecb6b316a9f3",
                     "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
@@ -246,12 +223,67 @@
                 },
                 {
                     "name": "",
-                    "id": "66273aed-0990-42ee-9023-e9dccc8f4c8e",
-                    "path": "<Keyboard>/enter",
+                    "id": "93ce3b00-638a-4ffb-a24b-233de81bd272",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Hazard",
+                    "action": "RightSignal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2a457938-7441-4c2e-b478-702038d400b3",
+                    "path": "<Keyboard>/g",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HighBeams",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4b2557f7-de48-44d2-a4d3-05bae90097bb",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LowBeams",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "63a41377-7ce4-43a3-be46-4e02c9ff8900",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Brake",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "31c0c062-a15d-4959-88ff-97eda84f0e8e",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShiftUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "804110c9-cb25-4bcc-9c51-b396564df947",
+                    "path": "<Keyboard>/ctrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShiftDown",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
