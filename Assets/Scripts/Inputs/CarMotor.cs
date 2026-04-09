@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CarMotor : MonoBehaviour
 {
-    [Header("Configurações")]
+    [Header("Motor")]
     [SerializeField] private float motorForce = 1500f;
     [SerializeField] private float accelerationSpeed = 3f;
     [SerializeField] private float decelerationSpeed = 4f;
@@ -14,6 +14,7 @@ public class CarMotor : MonoBehaviour
 
     private CarInputHandler _input;
     private Rigidbody rb;
+    private CarGearbox gearbox;
 
     private float currentAcceleration = 0f;
 
@@ -21,49 +22,48 @@ public class CarMotor : MonoBehaviour
     {
         _input = GetComponent<CarInputHandler>();
         rb = GetComponent<Rigidbody>();
+        gearbox = GetComponent<CarGearbox>(); // pega o câmbio
     }
 
     private void FixedUpdate()
     {
+        HandleAcceleration();
+        ApplyMotorTorque();
+        ApplyDrag();
+    }
+
+    private void HandleAcceleration()
+    {
         float input = _input.MoveInput.y;
 
-        // Aceleração / desaceleração
         if (input != 0)
         {
-            currentAcceleration = Mathf.Lerp(
-                currentAcceleration,
-                input,
-                accelerationSpeed * Time.fixedDeltaTime
-            );
+            currentAcceleration = Mathf.Lerp(currentAcceleration, input, accelerationSpeed * Time.fixedDeltaTime);
         }
         else
         {
-            currentAcceleration = Mathf.Lerp(
-                currentAcceleration,
-                0f,
-                decelerationSpeed * Time.fixedDeltaTime
-            );
+            currentAcceleration = Mathf.Lerp(currentAcceleration, 0f, decelerationSpeed * Time.fixedDeltaTime);
         }
 
-        // Evita valores muito pequenos (carro "andando sozinho")
         if (Mathf.Abs(currentAcceleration) < 0.01f)
-        {
             currentAcceleration = 0f;
-        }
+    }
 
-        // Aplica torque
-        float torque = currentAcceleration * motorForce;
-        wheelRL.motorTorque = torque;
-        wheelRR.motorTorque = torque;
+    private void ApplyMotorTorque()
+    {
+        float baseTorque = currentAcceleration * motorForce;
 
-        // Drag dinâmico 
-        if (input == 0)
-        {
-            rb.linearDamping = naturalDrag; // resistência ao soltar
-        }
-        else
-        {
-            rb.linearDamping = 0f; // livre pra acelerar
-        }
+        // Aqui entra o câmbio
+        float finalTorque = gearbox.GetTorque(baseTorque);
+
+        wheelRL.motorTorque = finalTorque;
+        wheelRR.motorTorque = finalTorque;
+    }
+
+    private void ApplyDrag()
+    {
+        float input = _input.MoveInput.y;
+
+        rb.linearDamping = (input == 0) ? naturalDrag : 0f;
     }
 }
