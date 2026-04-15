@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Controla aceleração e aplica limite REAL de velocidade
+/// </summary>
 public class CarMotor : MonoBehaviour
 {
     [Header("Motor")]
@@ -8,7 +11,7 @@ public class CarMotor : MonoBehaviour
     [SerializeField] private float decelerationSpeed = 4f;
     [SerializeField] private float naturalDrag = 3f;
 
-    [Header("Referências")]
+    [Header("Rodas")]
     [SerializeField] private WheelCollider wheelRL;
     [SerializeField] private WheelCollider wheelRR;
 
@@ -22,14 +25,37 @@ public class CarMotor : MonoBehaviour
     {
         _input = GetComponent<CarInputHandler>();
         rb = GetComponent<Rigidbody>();
-        gearbox = GetComponent<CarGearbox>(); // pega o câmbio
+        gearbox = GetComponent<CarGearbox>();
     }
 
-    private void FixedUpdate()
+        private void FixedUpdate()
     {
+        // Neutro
+        if (gearbox.IsNeutral())
+        {
+            ForceNeutralState();
+            return;
+        }
+
         HandleAcceleration();
         ApplyMotorTorque();
         ApplyDrag();
+
+        // Limita velocidade por marcha
+        LimitSpeed();
+    }
+
+    /// <summary>
+    /// Remove força do carro no neutro
+    /// </summary>
+    private void ForceNeutralState()
+    {
+        currentAcceleration = 0f;
+
+        wheelRL.motorTorque = 0f;
+        wheelRR.motorTorque = 0f;
+
+        rb.linearDamping = naturalDrag;
     }
 
     private void HandleAcceleration()
@@ -44,20 +70,37 @@ public class CarMotor : MonoBehaviour
         {
             currentAcceleration = Mathf.Lerp(currentAcceleration, 0f, decelerationSpeed * Time.fixedDeltaTime);
         }
-
-        if (Mathf.Abs(currentAcceleration) < 0.01f)
-            currentAcceleration = 0f;
     }
 
     private void ApplyMotorTorque()
     {
         float baseTorque = currentAcceleration * motorForce;
-
-        // Aqui entra o câmbio
         float finalTorque = gearbox.GetTorque(baseTorque);
 
         wheelRL.motorTorque = finalTorque;
         wheelRR.motorTorque = finalTorque;
+    }
+
+    /// <summary>
+    /// 🚨 LIMITADOR REAL DE VELOCIDADE POR MARCHA
+    /// Controla diretamente a velocidade do Rigidbody
+    /// </summary>
+    private void LimitSpeed()
+    {
+        float maxSpeed = gearbox.GetMaxSpeed();
+
+        // Neutro não limita
+        if (maxSpeed <= 0)
+            return;
+
+        float speed = rb.linearVelocity.magnitude * 3.6f;
+
+        // Se passou do limite → trava velocidade
+        if (speed > maxSpeed)
+        {
+            // Mantém direção, limita apenas magnitude
+            rb.linearVelocity = rb.linearVelocity.normalized * (maxSpeed / 3.6f);
+        }
     }
 
     private void ApplyDrag()
