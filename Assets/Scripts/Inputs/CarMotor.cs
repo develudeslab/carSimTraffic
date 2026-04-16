@@ -28,10 +28,10 @@ public class CarMotor : MonoBehaviour
         gearbox = GetComponent<CarGearbox>();
     }
 
-        private void FixedUpdate()
+    private void FixedUpdate()
     {
-        // Neutro
-        if (gearbox.IsNeutral())
+        // 🚫 Neutro
+        if (gearbox.CurrentGearEnum == CarGearbox.Gear.Neutral)
         {
             ForceNeutralState();
             return;
@@ -83,22 +83,19 @@ public class CarMotor : MonoBehaviour
 
     /// <summary>
     /// 🚨 LIMITADOR REAL DE VELOCIDADE POR MARCHA
-    /// Controla diretamente a velocidade do Rigidbody
     /// </summary>
     private void LimitSpeed()
     {
         float maxSpeed = gearbox.GetMaxSpeed();
 
-        // Neutro não limita
+        // Neutro ou inválido
         if (maxSpeed <= 0)
             return;
 
         float speed = rb.linearVelocity.magnitude * 3.6f;
 
-        // Se passou do limite → trava velocidade
         if (speed > maxSpeed)
         {
-            // Mantém direção, limita apenas magnitude
             rb.linearVelocity = rb.linearVelocity.normalized * (maxSpeed / 3.6f);
         }
     }
@@ -106,7 +103,6 @@ public class CarMotor : MonoBehaviour
     private void ApplyDrag()
     {
         float input = _input.MoveInput.y;
-
         rb.linearDamping = (input == 0) ? naturalDrag : 0f;
     }
 }

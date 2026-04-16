@@ -4,7 +4,7 @@ using UnityEngine;
 /// Sistema de transmissão:
 /// - Define marchas
 /// - Limite de velocidade por marcha
-/// - Controle de troca com cooldown (evita pular marchas)
+/// - Controle de troca com cooldown
 /// - Cálculo de torque e RPM
 /// </summary>
 public class CarGearbox : MonoBehaviour
@@ -31,13 +31,13 @@ public class CarGearbox : MonoBehaviour
     [Header("Relação de Marchas")]
     [SerializeField] private float[] gears =
     {
-        -3.0f,
-        0f,
-        3.2f,
-        2.1f,
-        1.5f,
-        1.0f,
-        0.8f
+        -3.0f, // Ré
+        0f,    // Neutro
+        3.2f,  // 1ª
+        2.1f,  // 2ª
+        1.5f,  // 3ª
+        1.0f,  // 4ª
+        0.8f   // 5ª
     };
 
     // =========================
@@ -47,16 +47,23 @@ public class CarGearbox : MonoBehaviour
     [Header("Velocidade Máxima por Marcha")]
     [SerializeField] private float[] gearMaxSpeeds =
     {
-        20f,
-        0f,
-        20f,
-        40f,
-        50f,
-        60f,
-        80f
+        20f, // Ré
+        0f,  // Neutro
+        20f, // 1ª
+        40f, // 2ª
+        50f, // 3ª
+        60f, // 4ª
+        80f  // 5ª
     };
 
     [SerializeField] private Gear currentGear = Gear.First;
+
+    // =========================
+    // ACESSO PARA OUTROS SCRIPTS
+    // =========================
+
+    public int CurrentGear => (int)currentGear;
+    public Gear CurrentGearEnum => currentGear;
 
     // =========================
     // RPM
@@ -67,21 +74,19 @@ public class CarGearbox : MonoBehaviour
     [SerializeField] private float maxRPM = 7000f;
     [SerializeField] private float rpmMultiplier = 50f;
 
-    private float currentRPM = 0f;
+    [SerializeField] private float currentRPM = 0f;
+
+    public float CurrentRPM => currentRPM;
+    public float MaxRPM => maxRPM;
 
     // =========================
-    // CONTROLE DE TROCA
+    // TROCA DE MARCHA
     // =========================
 
     [Header("Troca de Marcha")]
-    
-    /// <summary>
-    /// Tempo mínimo entre trocas
-    /// </summary>
     [SerializeField] private float shiftCooldown = 0.25f;
 
     private float lastShiftTime;
-
     private Rigidbody rb;
 
     private void Start()
@@ -92,10 +97,6 @@ public class CarGearbox : MonoBehaviour
     private void FixedUpdate()
     {
         CalculateRPM();
-
-        float speed = rb.linearVelocity.magnitude * 3.6f;
-
-        Debug.Log($"Vel: {speed:0} km/h | Marcha: {currentGear} | RPM: {currentRPM:0}");
     }
 
     // =========================
@@ -130,29 +131,53 @@ public class CarGearbox : MonoBehaviour
         float speed = rb.linearVelocity.magnitude * 3.6f;
         float ratio = gears[(int)currentGear];
 
+        // Neutro
         if (ratio == 0)
         {
             currentRPM = Mathf.Lerp(currentRPM, minRPM, Time.fixedDeltaTime * 2f);
             return;
         }
 
-        float targetRPM = speed * ratio * rpmMultiplier;
+        float targetRPM = speed * Mathf.Abs(ratio) * rpmMultiplier;
         targetRPM = Mathf.Clamp(targetRPM, minRPM, maxRPM);
 
         currentRPM = Mathf.Lerp(currentRPM, targetRPM, Time.fixedDeltaTime * 5f);
     }
 
-    public float GetRPM() => currentRPM;
-
-    public bool IsNeutral() => currentGear == Gear.Neutral;
-
-    // =========================
-    // CONTROLE DE TROCA (ANTI-SPAM)
-    // =========================
-
     /// <summary>
-    /// Verifica se pode trocar de marcha
+    /// 🔥 RPM máximo da marcha atual (usado na UI)
     /// </summary>
+    public float GetMaxRPMForCurrentGear()
+    {
+        float maxSpeed = gearMaxSpeeds[(int)currentGear];
+        float ratio = gears[(int)currentGear];
+
+        if (ratio == 0)
+            return minRPM;
+
+        float maxGearRPM = maxSpeed * Mathf.Abs(ratio) * rpmMultiplier;
+        return Mathf.Clamp(maxGearRPM, minRPM, maxRPM);
+    }
+
+    // =========================
+    // UTILIDADES
+    // =========================
+
+    public string GetGearString()
+    {
+        if (currentGear == Gear.Neutral)
+            return "N";
+
+        if (currentGear == Gear.Reverse)
+            return "R";
+
+        return ((int)currentGear - 1).ToString();
+    }
+
+    // =========================
+    // CONTROLE DE TROCA
+    // =========================
+
     private bool CanShift()
     {
         return Time.time >= lastShiftTime + shiftCooldown;
@@ -160,7 +185,6 @@ public class CarGearbox : MonoBehaviour
 
     public void ShiftUp()
     {
-        // 🚨 Evita múltiplas trocas instantâneas
         if (!CanShift()) return;
 
         if ((int)currentGear < gears.Length - 1)
